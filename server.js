@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const productRoutes = require('./routes/productRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // Use routes
 app.use('/api/products', productRoutes);
 app.use('/api/customers', customerRoutes);
