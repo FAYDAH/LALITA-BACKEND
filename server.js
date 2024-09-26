@@ -34,3 +34,5 @@ mongoose.connect(
     console.log(`Server running on port ${port}`);
   });
 }).catch(err => console.log(err));
+
+app.options('*', cors()); // Allow preflight for all routes
