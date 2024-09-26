@@ -16,6 +16,12 @@ app.use('/api/products', productRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/inventory', inventoryRoutes);
 
+app.use(cors({
+  origin: 'https://lalita.vercel.app', // replace with your frontend's deployed URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed HTTP methods
+ 
+}));
+
 mongoose.connect(
   'mongodb+srv://faydahyahya93:jyfdash4615@lalita.sfrmii9.mongodb.net/?appName=LALITA',
   {
